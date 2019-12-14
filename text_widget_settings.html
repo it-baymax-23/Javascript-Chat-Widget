@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text Chat Widget Setting</title>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" />
+	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="text_widget_server.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col text-center">
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="margin-top: 150px;">
+				  Open Settings..
+				</button>
+			</div>
+		</div>
+		
+		<!-- The Modal -->
+		<div class="modal" id="myModal">
+			<div class="modal-dialog" style="max-width: 580px !important;">
+			    <div class="modal-content">
+				    <!-- Modal Header -->
+				    <div class="modal-header">
+				       <h4 class="modal-title">Chat Widget Settings</h4>
+				       <button type="button" class="close" data-dismiss="modal">&times;</button>
+				    </div>
+
+				    <!-- Modal body -->
+				    <div class="modal-body">
+				    	<div class="input-group mb-3">
+						    <div class="input-group-prepend">
+						      <span class="input-group-text">Location ID</span>
+						    </div>
+						    <input type="text" class="form-control" id="location_id" placeholder="Location ID...">
+						</div>
+			        	<div class="input-group mb-3">
+						    <div class="input-group-prepend">
+						      <span class="input-group-text">Agent Name</span>
+						    </div>
+						    <input type="text" class="form-control" id="agent_name" placeholder="Agent Name...">
+						</div>
+						<div class="input-group mb-3">
+						    <div class="input-group-prepend">
+						      <span class="input-group-text">Agent Avatar</span>
+						    </div>
+						    <input type="text" class="form-control" id="agent_image_url" placeholder="Agent Avatar URL...">
+						</div>
+						<div class="input-group mb-3">
+						    <div class="input-group-prepend">
+						      <span class="input-group-text">Header Text</span>
+						    </div>
+						    <input type="text" class="form-control" id="header_text" placeholder="ex: We will text you!">
+						</div>
+						<div class="input-group mb-3">
+						    <div class="input-group-prepend">
+						      <span class="input-group-text">Intro Message</span>
+						    </div>
+						    <input type="text" class="form-control" id="intro_message" placeholder="ex: Thank you for reaching us. One of our agents will text you shortly.">
+						</div>
+						<div class="row" style="padding-top: 5px; padding-bottom: 5px;">
+							<div class="col-md-2">
+								Monday: 
+							</div>
+							<div class="col-md-8">
+								<div class="row">
+									<div class="col-md-5"><input type="time" id="Mon_start_hour" class="form-control" placeholder="Start Hour"></div>
+									<div class="col-md-">To</div>
+									<div class="col-md-5"><input type="time" id="Mon_end_hour" class="form-control" placeholder="End Hour"></div>
+								</div>
+							</div>
+							<div class="col-md-2" style="align-items: center;">
+								<form>
+								  <div class="custom-control custom-switch" style="margin-top: 6px;">
+								    <input type="checkbox" class="custom-control-input switch" value="false" id="switch1">
+								    <label class="custom-control-label" for="switch1"></label>
+								  </div>
+								</form>
+							</div>
+						</div>
+						<div class="row" style="padding-top: 5px; padding-bottom: 5px;">
+							<div class="col-md-2">
+								Tuesday: 
+							</div>
+							<div class="col-md-8">
+								<div class="row">
+									<div class="col-md-5"><input type="time" id="Tue_start_hour" class="form-control" placeholder="Start Hour"></div>
+									<div class="col-md-">To</div>
+									<div class="col-md-5"><input type="time" id="Tue_end_hour" class="form-control" placeholder="End Hour"></div>
+								</div>
+							</div>
+							<div class="col-md-2" style="align-items: center;">
+								<form>
+								  <div class="custom-control custom-switch" style="margin-top: 6px;">
+								    <input type="checkbox" class="custom-control-input switch" value="false" id="switch2">
+								    <label class="custom-control-label" for="switch2"></label>
+								  </div>
+								</form>
+							</div>
+						</div>
+						<div class="row" style="padding-top: 5px; padding-bottom: 5px;">
+							<div class="col-md-2">
+								Wednesday: 
+							</div>
+							<div class="col-md-8">
+								<div class="row">
+									<div class="col-md-5"><input type="time" id="Wed_start_hour" class="form-control" placeholder="Start Hour"></div>
+									<div class="col-md-">To</div>
+									<div class="col-md-5"><input type="time" id="Wed_end_hour" class="form-control" placeholder="End Hour"></div>
+								</div>
+							</div>
+							<div class="col-md-2" style="align-items: center;">
+								<form>
+								  <div class="custom-control custom-switch" style="margin-top: 6px;">
+								    <input type="checkbox" class="custom-control-input switch" value="false" id="switch3">
+								    <label class="custom-control-label" for="switch3"></label>
+								  </div>
+								</form>
+							</div>
+						</div>
+						<div class="row" style="padding-top: 5px; padding-bottom: 5px;">
+							<div class="col-md-2">
+								Thursday: 
+							</div>
+							<div class="col-md-8">
+								<div class="row">
+									<div class="col-md-5"><input type="time" id="Thu_start_hour" class="form-control" placeholder="Start Hour"></div>
+									<div class="col-md-">To</div>
+									<div class="col-md-5"><input type="time" id="Thu_end_hour" class="form-control" placeholder="End Hour"></div>
+								</div>
+							</div>
+							<div class="col-md-2" style="align-items: center;">
+								<form>
+								  <div class="custom-control custom-switch" style="margin-top: 6px;">
+								    <input type="checkbox" class="custom-control-input switch" value="false" id="switch4">
+								    <label class="custom-control-label" for="switch4"></label>
+								  </div>
+								</form>
+							</div>
+						</div>
+						<div class="row" style="padding-top: 5px; padding-bottom: 5px;">
+							<div class="col-md-2">
+								Friday: 
+							</div>
+							<div class="col-md-8">
+								<div class="row">
+									<div class="col-md-5"><input type="time" id="Fri_start_hour" class="form-control" placeholder="Start Hour"></div>
+									<div class="col-md-">To</div>
+									<div class="col-md-5"><input type="time" id="Fri_end_hour" class="form-control" placeholder="End Hour"></div>
+								</div>
+							</div>
+							<div class="col-md-2" style="align-items: center;">
+								<form>
+								  <div class="custom-control custom-switch" style="margin-top: 6px;">
+								    <input type="checkbox" class="custom-control-input switch" value="false" id="switch5">
+								    <label class="custom-control-label" for="switch5"></label>
+								  </div>
+								</form>
+							</div>
+						</div>
+						<div class="row" style="padding-top: 5px; padding-bottom: 5px;">
+							<div class="col-md-2">
+								Saturday: 
+							</div>
+							<div class="col-md-8">
+								<div class="row">
+									<div class="col-md-5"><input type="time" id="Sat_start_hour" class="form-control" placeholder="Start Hour"></div>
+									<div class="col-md-">To</div>
+									<div class="col-md-5"><input type="time" id="Sat_end_hour" class="form-control" placeholder="End Hour"></div>
+								</div>
+							</div>
+							<div class="col-md-2" style="align-items: center;">
+								<form>
+								  <div class="custom-control custom-switch" style="margin-top: 6px;">
+								    <input type="checkbox" class="custom-control-input switch" value="false" id="switch6">
+								    <label class="custom-control-label" for="switch6"></label>
+								  </div>
+								</form>
+							</div>
+						</div>
+						<div class="row" style="padding-top: 5px; padding-bottom: 5px;">
+							<div class="col-md-2">
+								Sunday: 
+							</div>
+							<div class="col-md-8">
+								<div class="row">
+									<div class="col-md-5"><input type="time" id="Sun_start_hour" class="form-control" placeholder="Start Hour"></div>
+									<div class="col-md-">To</div>
+									<div class="col-md-5"><input type="time" id="Sun_end_hour" class="form-control" placeholder="End Hour"></div>
+								</div>
+							</div>
+							<div class="col-md-2" style="align-items: center;">
+								<form>
+								  <div class="custom-control custom-switch" style="margin-top: 6px;">
+								    <input type="checkbox" class="custom-control-input switch" value="false" id="switch7">
+								    <label class="custom-control-label" for="switch7"></label>
+								  </div>
+								</form>
+							</div>
+						</div>
+						<div class="row">
+							<span style="padding: 10px 10px 0 10px">Select a Header Style</span>
+						</div>
+					    <select name="headers" class="custom-select" id="header_style" style="margin-top: 10px;">
+						   <option selected>Select Header Style</option>
+						   <option value="header_style1">Header Style1</option>
+						   <option value="header_style2">Header Style2</option>
+						   <option value="header_style3">Header Style3</option>
+						   <option value="header_style4">Header Style4</option>
+					    </select>
+					    <div class="row">
+					    	<span style="padding: 10px 10px 0 10px">Select a Country</span>
+					    </div>
+					    <select name="countries" class="custom-select" id="country_id" style="margin-top: 10px;">
+						   <option selected>Select a Country</option>
+						   <option value="US">United States</option>
+						   <option value="UK">United Kingdom</option>
+						   <option value="AU">Australlia</option>
+					    </select>
+				    </div>
+
+				    <!-- Modal footer -->
+				    <div class="modal-footer">
+				        <button type="button" class="btn btn-primary" id="save_btn">Save & Generate</button>
+				    </div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal" id="resultCode">
+			<div class="modal-dialog">
+			    <div class="modal-content">
+				    <!-- Modal Header -->
+				    <div class="modal-header">
+				       <h4 class="modal-title">Chat Widget Settings</h4>
+				       <button type="button" class="close" data-dismiss="modal">&times;</button>
+				    </div>
+
+				    <!-- Modal body -->
+				    <div class="modal-body">
+			        	<textarea id="code_container" style="border: 1px #c5c5c5 solid; border-radius: 3px; width: 100%;" rows="10"></textarea>
+				    </div>
+
+				    <!-- Modal footer -->
+				    <div class="modal-footer">
+				        <button type="button" class="btn btn-primary" id="copy_code_btn" onclick="copyCode()">Copy</button>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			var embed_code = "";
+
+			$('#save_btn').on('click', function() {
+				var data = {};
+
+				var work_time = {
+					'Mon' : {
+						'start_hour' : $('#Mon_start_hour').val(),
+						'end_hour'   : $('#Mon_end_hour').val(),
+						'enable_state' : $('#switch1').val()
+					}, 
+
+					'Tue' : {
+						'start_hour' : $('#Tue_start_hour').val(),
+						'end_hour'   : $('#Tue_end_hour').val(),
+						'enable_state' : $('#switch2').val()
+					},
+
+					'Wed' : {
+						'start_hour' : $('#Wed_start_hour').val(),
+						'end_hour'   : $('#Wed_end_hour').val(),
+						'enable_state' : $('#switch3').val()
+					},
+
+					'Thu' : {
+						'start_hour' : $('#Thu_start_hour').val(),
+						'end_hour'   : $('#Thu_end_hour').val(),
+						'enable_state' : $('#switch4').val()
+					},
+
+					'Fri' : {
+						'start_hour' : $('#Fri_start_hour').val(),
+						'end_hour'   : $('#Fri_end_hour').val(),
+						'enable_state' : $('#switch5').val()
+					},
+
+					'Sat' : {
+						'start_hour' : $('#Sat_start_hour').val(),
+						'end_hour'   : $('#Sat_end_hour').val(),
+						'enable_state' : $('#switch6').val()
+					},
+
+					'Sun' : {
+						'start_hour' : $('#Sun_start_hour').val(),
+						'end_hour'   : $('#Sun_end_hour').val(),
+						'enable_state' : $('#switch7').val()
+					},
+				}
+
+				var location_id = $('#location_id').val();
+				var agent_name = $('#agent_name').val();
+				var agent_image_url = $('#agent_image_url').val();
+				var intro_message = $('#intro_message').val();
+				var header_text = $('#header_text').val();
+				var header_style = $('#header_style').val();
+				var country_id = $('#country_id').val();
+
+				var stringified_data = JSON.stringify(work_time);
+				// localStorage.setItem('setting_data', stringified_data);
+
+				console.log(work_time);
+
+				embed_code = '<' + 'script' + '>'+ 'PROVISION.init("' + location_id + '",{intro_message:' + '"' + intro_message + '"' + ', agent_name:' + '"' + agent_name + '"' + ', work_time:' + stringified_data  + ',image_url:'+ '"' + agent_image_url + '"' + ', header_style:' + '"' + header_style + '"' + ', heading_message:' + '"' + header_text + '"' + ', timezone:' + '"' + country_id + '"' + '});' + '<' + '/' + 'script' + '>';
+
+				$('#code_container').val(embed_code);
+
+				$('#myModal').modal('hide');
+				$('#resultCode').modal('show');
+				
+			});
+		}) 
+
+		$(".switch").on('change', function() {
+		   if ($(this).attr('checked')) {
+		   $(this).val('false');
+		   }
+		  else {
+		   $(this).val('true');
+		}});
+
+
+		function copyCode() {
+		  /* Get the textarea field */
+		  var copyCode = document.getElementById("code_container");
+
+		  /* Select the textarea field */
+		  copyCode.select();
+		  copyCode.setSelectionRange(0, 99999); /*For mobile devices*/
+
+		  /* Copy the code inside the text field */
+		  document.execCommand("copy");
+
+		  /* Alert the copied code */
+		  alert("Copied to clipboard!");
+		}
+	</script>
+</body>
+</html>
